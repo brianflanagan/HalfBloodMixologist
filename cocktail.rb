@@ -37,7 +37,7 @@ class Cocktail
 
   def recipe
     (self.name.upcase + ':
-' + self.steps.join('
+- ' + self.steps.join('
 - ') + '
 ' + self.serving_suggestion).strip
   end
