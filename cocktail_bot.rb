@@ -13,9 +13,8 @@ $stdout.sync = true
 loop do
   msg = nil
 
-  while msg.nil? or (msg.size < 1) or (msg.size > (140 - 'RT SnapesCocktails'.size)) do
-    recipe = CocktailGenerator.generate_cocktail
-    msg = recipe + ' #' + recipe.size.to_s
+  while msg.nil? or (msg.size < 1) or (msg.size > (140 - 'RT HalfBloodDrinks'.size)) do
+    msg = CocktailGenerator.generate_cocktail
   end
 
   puts " >> " + msg
