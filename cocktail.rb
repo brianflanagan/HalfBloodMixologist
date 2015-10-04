@@ -36,7 +36,7 @@ class Cocktail
   end
 
   def recipe
-    (self.name + '
+    (self.name.upcase + ':
 ' + self.steps.join('
 ') + '
 ' + self.serving_suggestion).strip
