@@ -1,1 +1,1 @@
-sequels: bundle exec ruby cocktail_bot.rb
+cocktails: bundle exec ruby cocktail_bot.rb
