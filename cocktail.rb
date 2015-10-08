@@ -46,9 +46,9 @@ class Cocktail
 
   def create_steps
     self.steps << if [true,false].sample
-      "Pour a measure of #{ self.liquor_brand.upcase }™ #{ self.base_liquor.to_s.capitalize }"
+      "Pour a #{ ['measure','glug','shot'].sample } of #{ self.liquor_brand.upcase }™ #{ self.base_liquor.to_s.downcase }"
     else
-      "Add a measure of #{ self.base_liquor.to_s.capitalize }"
+      "Add a #{ ['measure','glug','shot'].sample } of #{ self.base_liquor.to_s.downcase }"
     end
 
     self.ingredients.uniq.each do |ingredient|
