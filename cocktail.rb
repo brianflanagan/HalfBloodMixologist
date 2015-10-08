@@ -89,7 +89,11 @@ class Cocktail
   end
 
   def a_step_for_ingredient(ingredient)
-    "Add #{ an_amount } of #{ ingredient.downcase }"
+    "#{ a_method_of_deposit.capitalize } #{ an_amount } of #{ ingredient.downcase }"
+  end
+
+  def a_method_of_deposit
+    ['add','sprinkle','stir in'].sample
   end
 
   def an_amount
