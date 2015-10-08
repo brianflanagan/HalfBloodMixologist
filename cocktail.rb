@@ -45,18 +45,22 @@ class Cocktail
   private
 
   def create_steps
-    self.steps << "Pour a measure of #{ self.liquor_brand.upcase }™ #{ self.base_liquor.to_s.capitalize }"
+    self.steps << if [true,false].sample
+      "Pour a measure of #{ self.liquor_brand.upcase }™ #{ self.base_liquor.to_s.capitalize }"
+    else
+      "Add a measure of #{ self.base_liquor.to_s.capitalize }"
+    end
 
     self.ingredients.uniq.each do |ingredient|
       self.steps << a_step_for_ingredient(ingredient)
-      self.steps << an_instruction_step
+      (self.steps << an_instruction_step) if [true,false,false].sample
     end
   end
 
   def create_name
     important_ingredient = self.ingredients.sample
 
-    if [true,false].sample
+    if [true,false,false].sample
       if important_ingredient.split(' ').size > 1
         self.name = "#{ important_ingredient } #{ LIQUOR_NAMES[self.base_liquor].sample }"
         return
@@ -68,6 +72,8 @@ class Cocktail
       potion_name = POTION_NAMES.sample
       if potion_name.include?('Potion')
         self.name = "#{ potion_name.gsub('Potion',LIQUOR_NAMES[self.base_liquor].sample) }"
+      elsif potion_name.include?('Draught')
+        self.name = "#{ potion_name.gsub('Draught',LIQUOR_NAMES[self.base_liquor].sample) }"
       else
         self.name = [potion_name,LIQUOR_NAMES[self.base_liquor].sample].shuffle.join(' ')
       end
