@@ -116,7 +116,7 @@ class Cocktail
       'Drink at the full moon',
       'Serve over ice',
       "Serve in a #{ ['pewter cauldron','tumbler','cauldron','brass cauldron','martini glass','gold cauldron','brass tumbler','pewter tumbler'].sample }",
-      "Garnish with #{ [INGREDIENTS.sample,'lemon','lime',"the blood of your #{ ['friends','enemies','father','mother','betrayor','rival','blood','equal','better','servant'].sample }"].sample }"
+      "Garnish with #{ [INGREDIENTS.sample,'lemon','lime',"blood of a #{ ['friend','enemy','father','mother','betrayor','rival','equal','better','servant'].sample }"].sample }"
     ].sample
   end
 end
